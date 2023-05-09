@@ -11,10 +11,9 @@ main {
 
 #calculator {
     background-color: #fcfcfc;
-    border: 5px solid #f7ecec;
+    border: 5px solid #fcfcfc;
     border-radius: 12px;
     display: grid;
-    grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(100px, auto) repeat(5, 80px);
     gap: 7px;
     padding: 10px;
@@ -29,9 +28,7 @@ main {
     justify-content: space-around;
     align-items: flex-end;
     padding: 5px;
-    font-size: 5.5em;
-    font-weight: initial;
-    text-shadow: 1.3px 1.3px #383838;
+    font-size: 4em;
     margin: 5px;
 }
 
@@ -41,53 +38,26 @@ td {
 
 button {
     width: 70px;
-    margin: 7px 15px;
+    margin: 7px 10px;
     padding: 15px;
     border-radius: 5%;
-    border: none;
     font-weight: initial;
     font-size: 2em;
     font-family: 'Helvetica', sans-serif;
     background-color: #e9ecef;
     color: black;
+    border: outset 1px #e9ecef;
     box-shadow: 1px 1px 3px 0px;
 }
 
 .equals {
-width: 173px;
+width: 164px;
 }
 
 .operator {
-    margin-left: -87px
+    margin-left: -84px
 }
-
-/* .clear {
-    background-color: dodgerblue;
-}
-
-.sign {
-    background-color: dodgerblue;
-}
-
-.percent {
-    background-color: dodgerblue;
-}
-
-.operator {
-    background-color: #FF8F1F;
-}
-
-.operand {
-    background-color: #217C7E;
-} */
 
 #zero {
     grid-column: span 2;
 }
-
-/* .decimal {
-    background-color: #217C7E;
-}
-.equals {
-    background-color: #FF8F1F;
-} */
