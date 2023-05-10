@@ -1,13 +1,13 @@
 function addition(n1, n2) {
-    return( n1 + n2).toFixed(2);
+    return( n1 + n2);
 }
 
 function subtraction(firstNumber, secondNumber) {
-    return (firstNumber - secondNumber).toFixed(2);
+    return (firstNumber - secondNumber);
 }
 
 function multiplication(firstNumber, secondNumber) {
-    return (firstNumber * secondNumber).toFixed(2);
+    return (firstNumber * secondNumber);
 }
 
 function division(firstNumber, secondNumber) {
@@ -15,7 +15,7 @@ function division(firstNumber, secondNumber) {
         return 0;
     }
 
-    return (firstNumber / secondNumber).toFixed(2);
+    return (firstNumber / secondNumber);
 }
 
 

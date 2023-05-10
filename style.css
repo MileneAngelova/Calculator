@@ -7,6 +7,8 @@ main {
     height: 100vh;
     overflow: hidden;
     background-color: azure;
+    font-family: 'Helvetica', sans-serif;
+
 }
 
 #calculator {
@@ -43,11 +45,13 @@ button {
     border-radius: 5%;
     font-weight: initial;
     font-size: 2em;
-    font-family: 'Helvetica', sans-serif;
     background-color: #e9ecef;
     color: black;
     border: outset 1px #e9ecef;
     box-shadow: 1px 1px 3px 0px;
+}
+button:active {
+    border: inset 1px #e9ecef;
 }
 
 .equals {
@@ -55,7 +59,11 @@ width: 164px;
 }
 
 .operator {
-    margin-left: -84px
+    margin-left: -84px;
+}
+
+.operand {
+    background-color: white;
 }
 
 #zero {
