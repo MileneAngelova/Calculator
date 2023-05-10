@@ -13,9 +13,9 @@ window.addEventListener('keydown', function (e) {
 
 function updateDisplay() {
     const display = document.getElementById('display');
-    display.textContent = displayValue;
+    display.innerText = displayValue;
     if (displayValue.length > 9) {
-        display.textContent = displayValue.substring(0, 9);
+        display.innerText = displayValue.substring(0, 9);
     }
 }
 
@@ -182,10 +182,4 @@ function operate(x, y, op) {
 
 function roundAccurately(num, places) {
     return parseFloat(Math.round(num + 'e' + places) + 'e-' + places);
-}
-
-buttons[4].addEventListener('click', inset());
-
-function inset() {
-    buttons[4].sty="border: outset 1px #e9ecef;";
 }
