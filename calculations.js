@@ -49,7 +49,7 @@ function percentage(firstNumber, operator, percent) {
         } else if (operator === '/') {
           return firstNumber / percent * 100;
         } else {
-          return "Operador inválido";
+          return "Invalid Operator";
         }
       }
     }
