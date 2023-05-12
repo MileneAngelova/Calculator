@@ -8,7 +8,6 @@ main {
     overflow: hidden;
     background-color: azure;
     font-family: 'Helvetica', sans-serif;
-
 }
 
 #calculator {
@@ -25,6 +24,7 @@ main {
 #display {
     grid-column: 1 / -1;
     background-color: #e5e5e5;
+    border: inset 5px lightgray;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
