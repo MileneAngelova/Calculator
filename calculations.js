@@ -35,19 +35,25 @@ function division(firstNumber, secondNumber) {
 
 function percentage(firstNumber, operator, percent) {
     if (firstNumber === 0 || firstNumber === '0') {
-        return 0;
+      return 0;
     } else {
-        if (percent === 0) {
-            return firstNumber;
+      if (percent === 0) {
+        return firstNumber;
+      } else {
+        if (operator === '+') {
+          return firstNumber * (1 + percent / 100);
+        } else if (operator === '-') {
+          return firstNumber * (1 - percent / 100);
+        } else if (operator === '*') {
+          return firstNumber * percent / 100;
+        } else if (operator === '/') {
+          return firstNumber / percent * 100;
         } else {
-            if (operator === '+') {
-                return firstNumber + (percent / 100);
-            } else if (operator === '-') {
-                return firstNumber - (percent / 100);
-            }
+          return "Operador inválido";
         }
+      }
     }
-}
+  }
 
 function updateDisplay() {
     const display = document.getElementById('display');
