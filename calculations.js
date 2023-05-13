@@ -33,7 +33,6 @@ function division(firstNumber, secondNumber) {
 }
 
 function backspace(number) {
-    debugger;
     if (number.toString().length === 1) {
         displayValue = 0;
     } else {
