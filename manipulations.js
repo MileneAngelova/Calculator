@@ -11,42 +11,11 @@ window.addEventListener('keydown', function (e) {
     key.click();
 });
 
-function addition(firstNumber, secondNumber) {
-    return (firstNumber + secondNumber);
-}
-
-function subtraction(firstNumber, secondNumber) {
-    return (firstNumber - secondNumber);
-}
-
-function multiplication(firstNumber, secondNumber) {
-    return (firstNumber * secondNumber);
-}
-
-function division(firstNumber, secondNumber) {
-    if (firstNumber === 0) {
-        return 0;
-    } else if (secondNumber === 0) {
-        return 'error';
-    }
-    return (firstNumber / secondNumber);
-}
-
-function backspace(number) {
-    debugger;
-    if (number.toString().length === 1) {
-        displayValue = 0;
-    } else {
-        number = number.toString().substring(0, number.toString().length - 1);
-        displayValue = number;
-    }
-}
-
 function updateDisplay() {
     const display = document.getElementById('display');
-    display.textContent = displayValue;
-    if (displayValue.length > 12) {
-        display.textContent = displayValue.substring(0, 12);
+    display.innerText = displayValue;
+    if (displayValue.length > 9) {
+        display.innerText = displayValue.substring(0, 9);
     }
 }
 
@@ -66,8 +35,8 @@ function clickButton() {
                 } else if (buttons[i].classList.contains('decimal')) {
                     inputDecimal(buttons[i].value);
                     updateDisplay();
-                } else if (buttons[i].classList.contains('backspace')) {
-                    backspace(displayValue);
+                } else if (buttons[i].classList.contains('percent')) {
+                    inputPercent(displayValue);
                     updateDisplay();
                 } else if (buttons[i].classList.contains('sign')) {
                     inputSign(displayValue);
@@ -134,14 +103,31 @@ function inputEquals() {
     } else if (secondOperator != null) {
         //handles final result
         secondOperand = displayValue;
-        result = addition(Number(firstOperand), Number(secondOperand), secondOperator);
-
-        checkResult();
+        result = operate(Number(firstOperand), Number(secondOperand), secondOperator);
+        if (result === 'lmao') {
+            displayValue = 'lmao';
+        } else {
+            displayValue = roundAccurately(result, 15).toString();
+            firstOperand = displayValue;
+            secondOperand = null;
+            firstOperator = null;
+            secondOperator = null;
+            result = null;
+        }
     } else {
         //handles first operation
         secondOperand = displayValue;
         result = operate(Number(firstOperand), Number(secondOperand), firstOperator);
-        checkResult();
+        if (result === 'lmao') {
+            displayValue = 'lmao';
+        } else {
+            displayValue = roundAccurately(result, 15).toString();
+            firstOperand = displayValue;
+            secondOperand = null;
+            firstOperator = null;
+            secondOperator = null;
+            result = null;
+        }
     }
 }
 
@@ -152,6 +138,10 @@ function inputDecimal(dot) {
     } else if (!displayValue.includes(dot)) {
         displayValue += dot;
     }
+}
+
+function inputPercent(num) {
+    displayValue = (num / 100).toString();
 }
 
 function inputSign(num) {
@@ -167,33 +157,29 @@ function clearDisplay() {
     result = null;
 }
 
-function operate(firstNumber, secondNumber, operator) {
-    if (operator === '+') {
-        return addition(firstNumber, secondNumber);
-    } else if (operator === '-') {
-        return subtraction(firstNumber, secondNumber);
-    } else if (operator === '*') {
-        return multiplication(firstNumber, secondNumber);
-    } else if (operator === '/') {
-        return division(firstNumber, secondNumber);
-    } else if (operator === '%') {
-        return backspace(firstNumber);
+function inputBackspace() {
+    if (firstOperand != null) {
+        firstOperand = null;
+        updateDisplay();
     }
 }
 
-function roundAccurately(number, places) {
-    return parseFloat(Math.round(number + 'e' + places) + 'e-' + places);
+function operate(x, y, op) {
+    if (op === '+') {
+        return x + y;
+    } else if (op === '-') {
+        return x - y;
+    } else if (op === '*') {
+        return x * y;
+    } else if (op === '/') {
+        if (y === 0) {
+            return 'lmao';
+        } else {
+            return x / y;
+        }
+    }
 }
 
-function checkResult() {
-    if (result === 0) {
-        displayValue = 0;
-    } else {
-        displayValue = roundAccurately(result, 15).toString();
-        firstOperand = displayValue;
-        secondOperand = null;
-        firstOperator = null;
-        secondOperator = null;
-        result = null;
-    }
+function roundAccurately(num, places) {
+    return parseFloat(Math.round(num + 'e' + places) + 'e-' + places);
 }
