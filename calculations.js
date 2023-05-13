@@ -12,7 +12,6 @@ window.addEventListener('keydown', function (e) {
 });
 
 function addition(firstNumber, secondNumber) {
-    debugger;
     return (firstNumber + secondNumber);
 }
 
@@ -33,27 +32,15 @@ function division(firstNumber, secondNumber) {
     return (firstNumber / secondNumber);
 }
 
-function percentage(firstNumber, operator, percent) {
-    if (firstNumber === 0 || firstNumber === '0') {
-      return 0;
+function backspace(number) {
+    debugger;
+    if (number.toString().length === 1) {
+        displayValue = 0;
     } else {
-      if (percent === 0) {
-        return firstNumber;
-      } else {
-        if (operator === '+') {
-          return firstNumber * (1 + percent / 100);
-        } else if (operator === '-') {
-          return firstNumber * (1 - percent / 100);
-        } else if (operator === '*') {
-          return firstNumber * percent / 100;
-        } else if (operator === '/') {
-          return firstNumber / percent * 100;
-        } else {
-          return "Invalid Operator";
-        }
-      }
+        number = number.toString().substring(0, number.toString().length - 1);
+        displayValue = number;
     }
-  }
+}
 
 function updateDisplay() {
     const display = document.getElementById('display');
@@ -79,8 +66,8 @@ function clickButton() {
                 } else if (buttons[i].classList.contains('decimal')) {
                     inputDecimal(buttons[i].value);
                     updateDisplay();
-                } else if (buttons[i].classList.contains('percent')) {
-                    percentage(firstOperand, firstOperator, secondOperand);
+                } else if (buttons[i].classList.contains('backspace')) {
+                    backspace(displayValue);
                     updateDisplay();
                 } else if (buttons[i].classList.contains('sign')) {
                     inputSign(displayValue);
@@ -190,7 +177,7 @@ function operate(firstNumber, secondNumber, operator) {
     } else if (operator === '/') {
         return division(firstNumber, secondNumber);
     } else if (operator === '%') {
-        return percentage(firstNumber, operator, secondNumber);
+        return backspace(firstNumber);
     }
 }
 
