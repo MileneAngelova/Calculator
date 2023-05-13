@@ -24,10 +24,8 @@ function multiplication(firstNumber, secondNumber) {
 }
 
 function division(firstNumber, secondNumber) {
-    if (firstNumber === 0) {
-        return 0;
-    } else if (secondNumber === 0) {
-        return 'error';
+    if (secondNumber === 0) {
+        return 'Can not divide by zero';
     }
     return (firstNumber / secondNumber);
 }
@@ -71,9 +69,10 @@ function clickButton() {
                 } else if (buttons[i].classList.contains('sign')) {
                     inputSign(displayValue);
                     updateDisplay();
-                } else if (buttons[i].classList.contains('clear'))
+                } else if (buttons[i].classList.contains('clear')) {
                     clearDisplay();
-                updateDisplay();
+                    updateDisplay();
+                }
             }
         )
     }
@@ -133,8 +132,7 @@ function inputEquals() {
     } else if (secondOperator != null) {
         //handles final result
         secondOperand = displayValue;
-        result = addition(Number(firstOperand), Number(secondOperand), secondOperator);
-
+        result = operate(Number(firstOperand), Number(secondOperand), secondOperator);
         checkResult();
     } else {
         //handles first operation
@@ -188,7 +186,7 @@ function checkResult() {
     if (result === 0) {
         displayValue = 0;
     } else {
-        displayValue = roundAccurately(result, 15).toString();
+        displayValue = roundAccurately(result, 4).toString();
         firstOperand = displayValue;
         secondOperand = null;
         firstOperator = null;
