@@ -69,3 +69,238 @@ width: 164px;
 #zero {
     grid-column: span 2;
 }
+
+/* Responsive */
+
+
+/* Screen equal or less than 425px */
+
+@media (max-width: 425px) {
+    main {
+      display: flex;
+      min-height: 95vh;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      background-color: azure;
+      font-family: 'Helvetica', sans-serif;
+    }
+  
+    #calculator {
+      background-color: #fcfcfc;
+      border: 5px solid #fcfcfc;
+      border-radius: 12px;
+      display: grid;
+      grid-template-rows: minmax(70px, auto) repeat(5, 60px);
+      gap: 7px;
+      padding: 5px;
+      box-shadow: 0px 0px 3px 1px;
+    }
+  
+    #display {
+      grid-column: 1 / -1;
+      background-color: #e5e5e5;
+      border: inset 3px lightgray;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-end;
+      padding: 3px;
+      font-size: 2.5em;
+      margin: 3px;
+    }
+  
+    td {
+      height: 50px;
+    }
+  
+    button {
+      width: 50px;
+      margin: 3px 5px;
+      padding: 10px;
+      border-radius: 5%;
+      font-weight: initial;
+      font-size: 1.5em;
+      background-color: #e9ecef;
+      color: black;
+      border: outset 1px #e9ecef;
+      box-shadow: 1px 1px 3px 0px;
+    }
+  
+    button:active {
+      border: inset 1px #e9ecef;
+    }
+  
+    .equals {
+      width: 120px;
+    }
+  
+    .operator {
+      margin-left: -60px;
+    }
+  
+    .operand {
+      background-color: white;
+    }
+  
+    #zero {
+      grid-column: span 2;
+    }
+  }
+
+/*Screen equal or less than 375px*/
+
+@media only screen and (max-width: 375px) {
+    main {
+      display: flex;
+      min-height: 95vh;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      background-color: azure;
+      font-family: 'Helvetica', sans-serif;
+    }
+  
+    #calculator {
+      background-color: #fcfcfc;
+      border: 5px solid #fcfcfc;
+      border-radius: 12px;
+      display: grid;
+      grid-template-rows: minmax(100px, auto) repeat(5, 70px);
+      gap: 7px;
+      padding: 10px;
+      box-shadow: 0px 0px 3px 1px;
+    }
+  
+    #display {
+      grid-column: 1 / -1;
+      background-color: #e5e5e5;
+      border: inset 5px lightgray;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-end;
+      padding: 5px;
+      font-size: 3.5em;
+      margin: 5px;
+    }
+  
+    td {
+      height: 60px;
+    }
+  
+    button {
+      width: 60px;
+      margin: 5px;
+      padding: 10px;
+      border-radius: 5%;
+      font-weight: initial;
+      font-size: 1.5em;
+      background-color: #e9ecef;
+      color: black;
+      border: outset 1px #e9ecef;
+      box-shadow: 1px 1px 3px 0px;
+    }
+  
+    button:active {
+      border: inset 1px #e9ecef;
+    }
+  
+    .equals {
+      width: 130px;
+    }
+  
+    .operator {
+      margin-left: -65px;
+    }
+  
+    .operand {
+      background-color: white;
+    }
+  
+    #zero {
+      grid-column: span 2;
+    }
+  }
+
+/* Screen equal or less than 320px */
+
+@media (max-width: 320px) {
+
+    main {
+        display: flex;
+        min-height: 95vh;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        background-color: azure;
+        font-family: 'Helvetica', sans-serif;
+      }
+      
+      #calculator {
+        background-color: #fcfcfc;
+        border: 5px solid #fcfcfc;
+        border-radius: 12px;
+        display: grid;
+        grid-template-rows: minmax(50px, auto) repeat(5, 60px);
+        gap: 4px;
+        padding: 5px;
+        box-shadow: 0px 0px 3px 1px;
+      }
+      
+      #display {
+        grid-column: 1 / -1;
+        background-color: #e5e5e5;
+        border: inset 5px lightgray;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding: 5px;
+        font-size: 3em;
+        margin: 5px;
+      }
+      
+      td {
+        height: 50px;
+      }
+      
+      button {
+        width: 50px;
+        margin: 4px 5px;
+        padding: 10px;
+        border-radius: 5%;
+        font-weight: initial;
+        font-size: 1.5em;
+        background-color: #e9ecef;
+        color: black;
+        border: outset 1px #e9ecef;
+        box-shadow: 1px 1px 3px 0px;
+      }
+      
+      button:active {
+        border: inset 1px #e9ecef;
+      }
+      
+      .equals {
+        width: 106px;
+      }
+      
+      .operator {
+        margin-left: -54px;
+      }
+      
+      .operand {
+        background-color: white;
+      }
+      
+      #zero {
+        grid-column: span 2;
+      }
+    }
