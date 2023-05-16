@@ -179,3 +179,49 @@ function checkResult() {
         result = '';
     }
 }
+
+
+//Keyboard Support
+
+const body = document.querySelector('body');
+
+body.addEventListener('keydown', function(event) {
+    const key = event.key;  
+    
+    switch (key) {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
+        inputOperand(key);
+        break;
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+      case '%':
+        inputOperator(key);
+        break;
+      case '.':
+        inputDecimal(key);
+        break;
+      case 'Enter':
+      case '=':
+        inputEquals();
+        break;
+      case 'Backspace':
+        backspace(displayValue);
+        break;
+      case 'Escape':
+        clearDisplay();
+        break;
+    }
+  
+    updateDisplay();
+  });
