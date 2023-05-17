@@ -213,6 +213,7 @@ body.addEventListener('keydown', function(event) {
         break;
       case 'Enter':
       case '=':
+        event.preventDefault();
         inputEquals();
         break;
       case 'Backspace':
