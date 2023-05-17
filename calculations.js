@@ -225,14 +225,12 @@ body.addEventListener('keydown', function(event) {
   body.addEventListener('keyup', function(event) {
     const key = event.key;  
     
-    switch (key) {
-      // ...
+    switch (key) {      
       case 'Enter':
       case '=':
         event.preventDefault();
         inputEquals();
         break;
-      // ...
     }
   
     updateDisplay();
