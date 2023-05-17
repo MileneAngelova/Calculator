@@ -210,12 +210,7 @@ body.addEventListener('keydown', function(event) {
         break;
       case '.':
         inputDecimal(key);
-        break;
-      case 'Enter':
-      case '=':
-        event.preventDefault();
-        inputEquals();
-        break;
+        break;      
       case 'Backspace':
         backspace(displayValue);
         break;
@@ -226,3 +221,19 @@ body.addEventListener('keydown', function(event) {
   
     updateDisplay();
   });
+
+  body.addEventListener('keyup', function(event) {
+    const key = event.key;  
+    
+    switch (key) {
+      // ...
+      case 'Enter':
+      case '=':
+        event.preventDefault();
+        inputEquals();
+        break;
+      // ...
+    }
+  
+    updateDisplay();
+});
